@@ -1,5 +1,5 @@
-function Main() {
-  return <div></div>;
+function Main({ children }) {
+  return <main>{children}</main>;
 }
 
 export default Main;
