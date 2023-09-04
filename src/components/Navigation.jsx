@@ -42,7 +42,7 @@ function Navigation() {
       </nav>
 
       {isOpen && (
-        <nav className="absolute top-0 left-0 p-6 h-screen w-3/5 bg-white z-10">
+        <nav className="absolute top-0 left-0 p-6 h-screen w-3/5 bg-white z-[999]">
           <button className="mb-8" type="button" onClick={handleToggle}>
             <img
               src="assets/images/icon-close.svg"

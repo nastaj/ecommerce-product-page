@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
@@ -35,6 +35,19 @@ function App() {
   const [cartCount, setCartCount] = useState(0);
   const [cartIsOpen, setCartIsOpen] = useState(false);
   const [carouselIsOpen, setCarouselIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+  function determineMobile() {
+    const width = window.innerWidth;
+    setIsMobile(width < 1024);
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", determineMobile);
+    return () => {
+      window.removeEventListener("resize", determineMobile);
+    };
+  }, []);
 
   return (
     <>
@@ -50,11 +63,13 @@ function App() {
       </Header>
 
       <Main>
+        {(carouselIsOpen || isMobile) && (
+          <Carousel images={images} onCarouselIsOpen={setCarouselIsOpen} />
+        )}
         {cartIsOpen && (
           <Cart cartCount={cartCount} onCartCount={setCartCount} />
         )}
-        <ProductImage images={images} />
-        {carouselIsOpen && <Carousel images={images} />}
+        <ProductImage images={images} onCarouselIsOpen={setCarouselIsOpen} />
 
         <ProductDetails>
           <AddToCart onCartCount={setCartCount} />

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ProductImage({ images }) {
+function ProductImage({ images, onCarouselIsOpen }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
@@ -9,7 +9,8 @@ function ProductImage({ images }) {
         <img
           src={images[currentIndex].full}
           alt="Sneakers"
-          className="w-full md:rounded-lg"
+          className="w-full md:rounded-lg lg:hover:cursor-pointer"
+          onClick={() => onCarouselIsOpen((isOpen) => !isOpen)}
         />
 
         <div className="hidden lg:block mt-6 w-full">
