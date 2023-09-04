@@ -18,7 +18,10 @@ export default {
         "neutral-gray-2": "hsl(220, 14%, 75%)",
         "neutral-gray-3": "hsl(223, 64%, 98%)",
       },
+      dropShadow: {
+        glow: "0 10px 8px hsla(26, 100%, 55%, 0.5)",
+      },
     },
+    plugins: [],
   },
-  plugins: [],
 };

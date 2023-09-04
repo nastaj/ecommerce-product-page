@@ -6,7 +6,7 @@ function Cart({ cartCount, onCartCount }) {
   }
 
   return (
-    <div className="absolute top-[5.8rem] left-0 right-0 z-10 mx-2 bg-white rounded-lg min-h-[16rem] xl:w-fit lg:drop-shadow-2xl xl:left-3/4 xl:min-w-[24rem] xl:min-h-[17rem]">
+    <div className="absolute top-[5.8rem] left-0 right-0 z-50 lg:z-10 mx-2 bg-white rounded-lg min-h-[16rem] xl:w-fit drop-shadow-2xl xl:left-3/4 xl:min-w-[24rem] xl:min-h-[17rem]">
       <h3 className="p-6 font-bold border-b border-b-neutral-gray-3">Cart</h3>
 
       {cartCount > 0 ? (
@@ -36,7 +36,7 @@ function Cart({ cartCount, onCartCount }) {
           </div>
           <button
             type="button"
-            className="bg-primary-orange py-4 rounded-lg mb-8 text-white font-bold"
+            className="bg-primary-orange py-4 rounded-lg mb-8 text-white font-bold hover:opacity-50 hover:drop-shadow-glow active:scale-95 transition-all"
           >
             Checkout
           </button>

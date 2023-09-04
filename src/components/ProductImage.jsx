@@ -9,7 +9,7 @@ function ProductImage({ images, onCarouselIsOpen }) {
         <img
           src={images[currentIndex].full}
           alt="Sneakers"
-          className="w-full md:rounded-lg lg:hover:cursor-pointer"
+          className="w-full md:rounded-lg lg:cursor-pointer"
           onClick={() => onCarouselIsOpen((isOpen) => !isOpen)}
         />
 
@@ -18,10 +18,8 @@ function ProductImage({ images, onCarouselIsOpen }) {
             {images.map((image, i) => (
               <div
                 className={`${
-                  currentIndex === i
-                    ? "border-[3px] border-primary-orange hover:opacity-100"
-                    : ""
-                } w-1/5 basis-1/4 rounded-lg hover:opacity-50 cursor-pointer`}
+                  currentIndex === i && "border-[3px] border-primary-orange"
+                } w-1/5 basis-1/4 rounded-lg hover:opacity-50 cursor-pointer transition-opacity`}
                 key={i}
               >
                 <img

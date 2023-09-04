@@ -31,7 +31,7 @@ function AddToCart({ onCartCount }) {
       <button
         type="button"
         onClick={handleAddToCart}
-        className="flex justify-center gap-4 items-center bg-primary-orange rounded-md px-5 py-3 lg:basis-3/5"
+        className="flex justify-center gap-4 items-center bg-primary-orange rounded-md px-5 py-3 lg:basis-3/5 hover:opacity-50 hover:drop-shadow-glow active:scale-95 transition-all"
       >
         <svg
           width="22"
