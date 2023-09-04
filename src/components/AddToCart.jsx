@@ -11,8 +11,8 @@ function AddToCart({ onCartCount }) {
   }
 
   return (
-    <div className="flex flex-col mx-6 mb-12">
-      <div className="flex justify-between bg-neutral-gray-3 rounded-md px-5 py-3 mb-4">
+    <div className="flex flex-col lg:flex-row mb-12 lg:mb-0 lg:gap-6">
+      <div className="flex justify-between bg-neutral-gray-3 rounded-md px-5 py-3 mb-4 lg:basis-2/5 lg:mb-0">
         <button
           onClick={() =>
             setItemCount((itemCount) =>
@@ -31,7 +31,7 @@ function AddToCart({ onCartCount }) {
       <button
         type="button"
         onClick={handleAddToCart}
-        className="flex justify-center gap-4 items-center bg-primary-orange rounded-md px-5 py-3"
+        className="flex justify-center gap-4 items-center bg-primary-orange rounded-md px-5 py-3 lg:basis-3/5"
       >
         <svg
           width="22"

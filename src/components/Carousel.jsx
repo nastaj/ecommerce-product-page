@@ -1,13 +1,6 @@
 import { useState } from "react";
 
-const images = [
-  "assets/images/image-product-1.jpg",
-  "assets/images/image-product-2.jpg",
-  "assets/images/image-product-3.jpg",
-  "assets/images/image-product-4.jpg",
-];
-
-function Carousel() {
+function Carousel({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   function handlePreviousStep() {
@@ -23,26 +16,57 @@ function Carousel() {
   }
 
   return (
-    <figure className="relative">
-      <img src={images[currentIndex]} alt="Sneakers" className="w-full" />
-      <button
-        type="button"
-        onClick={handlePreviousStep}
-        className="absolute top-1/2 -translate-y-1/2 left-4 bg-white p-4 h-10 w-10 flex justify-center items-center rounded-full"
-      >
+    <>
+      <figure className="relative md:w-1/2 md:mx-auto lg:mx-0 lg:w-1/4 ">
         <img
-          src="assets/images/icon-previous.svg"
-          alt="Previous image button"
+          src={images[currentIndex].full}
+          alt="Sneakers"
+          className="w-full md:rounded-lg"
         />
-      </button>
-      <button
-        type="button"
-        onClick={handleNextStep}
-        className="absolute top-1/2 -translate-y-1/2 right-4 bg-white p-4 h-10 w-10 flex justify-center items-center rounded-full"
-      >
-        <img src="assets/images/icon-next.svg" alt="Next image button" />
-      </button>
-    </figure>
+        <button
+          type="button"
+          onClick={handlePreviousStep}
+          className="absolute top-1/2 -translate-y-1/2 left-4 bg-white p-4 h-10 w-10 flex justify-center items-center rounded-full lg:hidden"
+        >
+          <img
+            src="assets/images/icon-previous.svg"
+            alt="Previous image button"
+          />
+        </button>
+        <button
+          type="button"
+          onClick={handleNextStep}
+          className="absolute top-1/2 -translate-y-1/2 right-4 bg-white p-4 h-10 w-10 flex justify-center items-center rounded-full lg:hidden"
+        >
+          <img src="assets/images/icon-next.svg" alt="Next image button" />
+        </button>
+
+        <div className="hidden lg:block mt-6 w-full">
+          <div className="flex w-full gap-4 xl:gap-6">
+            {/* <img
+              src="assets/images/image-product-1-thumbnail.jpg"
+              alt="Sneakers thumbnail"
+              className="w-1/5 basis-1/4 rounded-lg"
+            />
+            <img
+              src="assets/images/image-product-2-thumbnail.jpg"
+              alt="Sneakers thumbnail"
+              className="w-1/5 basis-1/4 rounded-lg"
+            />
+            <img
+              src="assets/images/image-product-3-thumbnail.jpg"
+              alt="Sneakers thumbnail"
+              className="w-1/5 basis-1/4 rounded-lg"
+            />
+            <img
+              src="assets/images/image-product-4-thumbnail.jpg"
+              alt="Sneakers thumbnail"
+              className="w-1/5 basis-1/4 rounded-lg"
+            /> */}
+          </div>
+        </div>
+      </figure>
+    </>
   );
 }
 
