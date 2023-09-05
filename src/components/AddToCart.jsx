@@ -14,6 +14,7 @@ function AddToCart({ onCartCount }) {
     <div className="flex flex-col lg:flex-row mb-12 lg:mb-0 lg:gap-6">
       <div className="flex justify-between bg-neutral-gray-3 rounded-md px-5 py-3 mb-4 lg:basis-2/5 lg:mb-0">
         <button
+          type="button"
           onClick={() =>
             setItemCount((itemCount) =>
               itemCount > 0 ? itemCount - 1 : itemCount
@@ -23,7 +24,10 @@ function AddToCart({ onCartCount }) {
           <img src="assets/images/icon-minus.svg" alt="Minus icon" />
         </button>
         <span className="font-bold text-lg">{itemCount}</span>
-        <button onClick={() => setItemCount((itemCount) => (itemCount += 1))}>
+        <button
+          type="button"
+          onClick={() => setItemCount((itemCount) => (itemCount += 1))}
+        >
           <img src="assets/images/icon-plus.svg" alt="Plus icon" />
         </button>
       </div>
