@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/rest-countries-api-page-using-react-tailwind-css-and-framer-motion-2FWhKAtLvq)
-- Live Site URL: [GitHub Page](https://nastaj.github.io/rest-countries-api-page/)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/ecommerce-product-page-using-react-tailwind-css-and-framer-motion-ZYBEhKRmeS)
+- Live Site URL: [GitHub Page](https://nastaj.github.io/ecommerce-product-page/)
 
 ### Built with
 
