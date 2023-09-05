@@ -27,6 +27,7 @@ function Carousel({ images, onCarouselIsOpen }) {
       <figure className="relative md:w-1/2 md:mx-auto lg:fixed lg:translate-x-0 lg:translate-y-0 lg:left-0 lg:top-0 lg:rounded-none lg:w-full lg:h-full lg:backdrop-brightness-[.3] z-50">
         <div className="w-full lg:w-1/4 lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
           <button
+            type="button"
             className="absolute -top-8 right-0"
             onClick={handleCloseModal}
           >
@@ -40,6 +41,7 @@ function Carousel({ images, onCarouselIsOpen }) {
           </button>
           <div className="relative">
             <img
+              key={images[currentIndex].full}
               src={images[currentIndex].full}
               alt="Sneakers"
               className="md:rounded-lg"

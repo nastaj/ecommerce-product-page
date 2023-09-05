@@ -1,16 +1,20 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 function ProductImage({ images, onCarouselIsOpen }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <>
-      <figure className=" hidden lg:block relative md:w-1/2 md:mx-auto lg:mx-0 lg:w-1/4 ">
-        <img
+    <AnimatePresence>
+      <figure className="hidden lg:block relative md:w-1/2 md:mx-auto lg:mx-0 lg:w-1/4 ">
+        <motion.img
+          key={images[currentIndex].full}
           src={images[currentIndex].full}
           alt="Sneakers"
           className="w-full md:rounded-lg lg:cursor-pointer"
           onClick={() => onCarouselIsOpen((isOpen) => !isOpen)}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
         />
 
         <div className="hidden lg:block mt-6 w-full">
@@ -35,7 +39,7 @@ function ProductImage({ images, onCarouselIsOpen }) {
           </div>
         </div>
       </figure>
-    </>
+    </AnimatePresence>
   );
 }
 

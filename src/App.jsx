@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
@@ -52,11 +53,11 @@ function App() {
   return (
     <>
       <Header>
-        <div className="flex gap-6 xl:gap-24  items-center md:gap-8">
+        <div className="flex gap-6 xl:gap-24 items-center md:gap-8">
           <Logo />
           <Navigation />
         </div>
-        <div className="flex gap-6 lg:gap-10">
+        <div className="flex gap-6 lg:gap-10 items-center">
           <CartButton cartCount={cartCount} onCartIsOpen={setCartIsOpen} />
           <User />
         </div>
@@ -66,9 +67,18 @@ function App() {
         {(carouselIsOpen || isMobile) && (
           <Carousel images={images} onCarouselIsOpen={setCarouselIsOpen} />
         )}
-        {cartIsOpen && (
-          <Cart cartCount={cartCount} onCartCount={setCartCount} />
-        )}
+        <AnimatePresence>
+          {cartIsOpen && (
+            <motion.div
+              className="absolute top-[5.8rem] left-0 right-0 z-50 lg:z-10 xl:left-3/4"
+              initial={{ opacity: 0, translateY: -40 }}
+              animate={{ opacity: 1, translateY: 0 }}
+              exit={{ opacity: 0, translateY: -40 }}
+            >
+              <Cart cartCount={cartCount} onCartCount={setCartCount} />
+            </motion.div>
+          )}
+        </AnimatePresence>
         <ProductImage images={images} onCarouselIsOpen={setCarouselIsOpen} />
 
         <ProductDetails>
